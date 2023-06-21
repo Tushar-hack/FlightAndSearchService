@@ -7,6 +7,6 @@ const app = express();
 app.use(body_parser.urlencoded({ extended:true }));
 app.use(body_parser.json());
 
-app.listen(PORT, () => {
+app.listen(PORT,async () => {
     console.log(`Server started at PORT ${PORT}`);
 });
