@@ -1,8 +1,11 @@
 const express = require('express');
-const cityRepository = require('../../controllers/city_controller');
+const cityController = require('../../controllers/city_controller');
 const router = express.Router();
 
 
-router.post('/city', cityRepository.create);
+router.post('/city', cityController.create);
+router.delete('/city/:id', cityController.destroy);
+router.get('/city/:id', cityController.get);
+router.patch('/city/:id', cityController.update);
 
 module.exports = router;
