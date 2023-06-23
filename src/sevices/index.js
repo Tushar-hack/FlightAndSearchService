@@ -1,3 +1,3 @@
 module.exports = {
-    city_service: require('./city_service')
+    CityService : require('./city_service')
 }
