@@ -102,10 +102,30 @@ const getAll = async (req, res) => {
         });
     }
 }
+const createMultipleCities = async (req, res) => {
+    try {
+        const cities = await cityService.createMultipleCities(req.body.name);
+        return res.status(201).json({
+            data: cities,
+            success: true,
+            message: "Successfully Created the cities.",
+            err: {}
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: "Not able to create the cities",
+            err: error
+        });
+    }
+}
 module.exports = {
     create,
     destroy,
     update,
     get,
-    getAll
+    getAll,
+    createMultipleCities
 }

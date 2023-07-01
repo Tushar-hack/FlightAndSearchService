@@ -50,6 +50,16 @@ class cityService {
             throw {error};
         }
     }
+
+    async createMultipleCities ( name ) {
+        try {
+            const cities = await this.cityRepository.createMultipleCity(name);
+            return cities;
+        } catch (error) {
+            console.log("Something went wrong at Service Layer.");
+            throw {error};
+        }
+    }
 }
 
 module.exports = cityService;
