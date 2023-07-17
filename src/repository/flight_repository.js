@@ -73,8 +73,8 @@ class FlightRepository {
 
     async getFlight (flightId) {
         try {
-            const flight = await Flight.findByPk(flightId);
-            return flight;
+            const flightData = await Flight.findByPk(flightId);
+            return flightData;
         } catch (error) {
             throw { error};
             console.log("Something went wrong at repository layer.");
